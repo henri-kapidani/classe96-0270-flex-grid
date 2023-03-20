@@ -1,0 +1,75 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container {
+	max-width: 1000px;
+	margin-inline: auto;
+	/* padding-inline: 1rem; */
+	/* se mettete il padding non viente coperto completamente il gap aggiunto a destra e a sinistra della griglia, se non ha un colore questo in realta' non e' un problema */
+}
+
+.grid {
+	--gapx: 1rem;
+	--gapy: 2rem;
+}
+
+.cells {
+	display: flex;
+	flex-wrap: wrap;
+	background-color: red;
+}
+
+.cell .content {
+	height: 200px;
+}
+
+.cell:nth-child(odd) .content {
+	background-color: salmon;
+}
+
+.cell:nth-child(even) .content {
+	background-color: gold;
+}
+
+
+
+/* METODO CALCOLOSO */
+/*
+.cells {
+	gap: var(--gapy) var(--gapx);
+}
+
+.cell {
+	flex-basis: calc((100% - 2 * var(--gapx)) / 3);
+	height: 200px;
+}
+
+.cell-hero {
+	flex-basis: calc(2 * ((100% - 2 * var(--gapx)) / 3) + var(--gapx));
+}
+*/
+
+
+
+/* METODO AUTOMATICO */
+/*
+.grid {
+	overflow: hidden;
+}
+
+.cells {
+	margin: 0 calc(-1 * var(--gapx) / 2) calc(-1 * var(--gapy));
+}
+
+.cell {
+	flex-basis: 33.3333%;
+	padding: 0 calc(var(--gapx) / 2) var(--gapy);
+}
+
+.cell-hero {
+	flex-basis: 66.6666%;
+}
+*/
