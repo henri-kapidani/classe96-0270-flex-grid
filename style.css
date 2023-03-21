@@ -7,7 +7,7 @@
 .container {
 	max-width: 1000px;
 	margin-inline: auto;
-	/* padding-inline: 1rem; */
+	padding-inline: 1rem;
 	/* se mettete il padding non viente coperto completamente il gap aggiunto a destra e a sinistra della griglia, se non ha un colore questo in realta' non e' un problema */
 }
 
@@ -23,7 +23,7 @@
 }
 
 .cell .content {
-	height: 200px;
+	/* height: 200px; */
 }
 
 .cell:nth-child(odd) .content {
@@ -70,5 +70,42 @@
 }
 
 .cell-hero {
-	flex-basis: 66.6666%;
+	width: 66.6666%;
+}
+
+/* @media (max-width: 700px) {
+	.cell-hero {
+		display: none;
+	}
+} */
+
+.grid .content {
+	display: flex;
+	height: 100%;
+}
+
+.grid .text {
+	flex: 0 0 50%;
+}
+
+.grid img {
+	min-width: 0;
+	flex: 0 0 50%;
+	align-self: flex-end;
+}
+
+
+
+
+.card {
+	display: flex;
+}
+
+.testimonial {
+	min-width: 0;
+	width: 250px;
+	height: 250px;
+	flex: 0 0 auto;
+	object-fit: cover;
+	border-radius: 250px;
 }
